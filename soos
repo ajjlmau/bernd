@@ -1,0 +1,97 @@
+var Discord = require("discord.js");
+
+var bot = new Discord.Client();
+
+bot.on("ready", function() {
+	console.log("bernd on päällä");
+});
+
+
+
+bot.on("message", function(message)
+{
+	var input = message.content.toUpperCase();
+	var valinta = Math.floor((Math.random() * 3) + 1);
+	var valintaVideo = Math.floor((Math.random() * 3) + 1);
+
+	if(input === "MOI BERND")
+	{
+		switch(valinta){
+			case 1:
+				bot.reply(message, "hallo du!");
+				console.log("viesti lähetetty");
+				break;
+			case 2:
+				bot.reply(message, "hei");
+				console.log("viesti lähetetty");
+				break;
+			case 3:
+				bot.reply(message, "mitäms kullu");
+				console.log("viesti lähetetty");
+				break;
+			default:
+				bot.reply(message, "jokin taisi mennä pieleen");
+		}
+	}
+
+	if(input === "BERND ON HOMO")
+	{
+		switch(valinta){
+			case 1:
+				bot.sendMessage(message, "y u do dis");
+				console.log("viesti lähetetty");
+				break;
+			case 2:
+				bot.sendMessage(message, "fak u");
+				console.log("viesti lähetetty");
+				break;
+			case 3:
+				bot.sendMessage(message, "niimppäs olletkin ;))");
+				console.log("viesti lähetetty");
+				break;
+			default:
+				bot.sendMessage(message, "aha");
+		}
+	}
+
+	if(input === "BERND VIDEO")
+	{
+		switch (valintaVideo) {
+			case 1:
+				bot.sendMessage(message, "https://youtu.be/hiSsrEg3tks");
+				break;
+			case 2:
+				bot.sendMessage(message, "https://www.youtube.com/watch?v=2x4zwuS11s0");
+				break;
+			case 3:
+				bot.sendMessage(message, "https://www.youtube.com/watch?v=Yxs_mTRjLAU");
+				break;
+			default:
+				bot.sendMessage("sas");
+
+		}
+		console.log("video lähetetty ");
+	}
+
+	if(input === "BERND AUTA"){
+	bot.reply(message,"komennot:\nmoi bernd\nbernd on homo\nbernd video\nbernd spam");
+	console.log("apua lähetetty!");
+	}
+
+	if(input === "BERND TEE INVITE")
+	{
+		bot.createInvite("splöts prlrllllsshhh");
+		bot.sendMessage(message, "tehty");
+	}
+
+	if(input === "BERND SPAM"){
+		for(var a=0; a<30; a++){
+			bot.sendMessage(message, "spam");
+		}
+		console.log("spämmätty");
+	}
+
+
+});
+
+bot.loginWithToken("MjAzNjM5MzE5MzQ3MzMxMDcy.Cmr1ZQ.5FgrfXOK4UkwVA4Du0e3D3O3o3I");
